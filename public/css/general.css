@@ -1,0 +1,623 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body {
+  position:relative;
+  background-color:	#f7f7f7;
+  font-size:24px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+  position:relative;
+  box-sizing:border-box;
+  height:15vh;
+  padding:20px;
+  background-color:white;
+  display:flex;
+  justify-content:space-between;
+  align-content:center;
+  align-items:center;
+}
+
+main {
+  position:relative;
+  box-sizing:border-box;
+  min-height:85vh;
+}
+
+footer {
+  position:relative;
+  box-sizing:border-box;
+  background-color:rgb(26, 26, 26);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  padding:20px;
+  gap: 40px;
+  color:white;
+}
+
+footer img {
+  width:250px;
+  height:250px;
+}
+
+/* Style for nav bar */
+nav {
+  display:flex;
+  justify-content:right;
+  padding:0px 30px;
+}
+
+nav ul {
+  display:flex;
+  align-content:center;
+  align-items:center;
+  gap: 20px;
+}
+
+nav li {
+  display:inline-block;
+}
+
+nav a {
+  display:inline-block;
+  font-size:larger;
+  text-decoration-line:none;
+  color:inherit;
+  padding:5px;
+  border-radius:5px;
+}
+
+nav a:visited {
+  color:inherit;
+}
+
+nav a:hover {
+  background-color:rgb(183, 183, 183);
+}
+
+nav a:active {
+  background-color:rgb(130, 130, 130);
+}
+
+.logo:hover {
+  border:none;
+}
+
+.logo img{
+  width:100px;
+  height:100px;
+}
+
+/* Style for small buttons/links that are only as wide as their text */
+.smallbutton {
+  display:inline-block;
+  background-color:rgb(0, 102, 255);
+  color:white;
+  padding:10px;
+  border-radius:5px;
+  text-decoration-line:none;
+  width:fit-content;
+}
+
+.smallbutton:visited {
+  color:white;
+}
+
+.smallbutton:hover {
+  border:none;
+  background-color:rgb(34, 135, 249);
+}
+
+.smallbutton:active {
+  background-color:rgb(0, 62, 155);
+}
+
+/* Style for deletebuttons in displayevent.php */
+#deletebutton {
+  background-color:crimson;
+}
+
+.smallbutton + #deletebutton {
+  margin-left:10px;
+}
+
+#deletebutton:hover {
+  background-color:rgb(242, 38, 79);
+}
+
+#deletebutton:active {
+  background-color:rgb(168, 20, 50);
+}
+
+/* Style for banner section in index.php */
+.banner {
+  background-image:url("../images/bannerphoto.jpg");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  min-height:50vh;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  padding:20px;
+}
+
+.banner h1, .banner p{
+  text-align:center;
+  color:white;
+}
+
+/* Style for page section containing event boxes */
+.eventslide {
+  padding: 20px 40px;
+  display:flex;
+  justify-content:space-between;
+  position:relative;
+  gap:20px;
+}
+
+.eventslide>h2 {
+  margin-bottom:1em;
+}
+
+.eventcontainer {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:stretch;
+  align-content:flex-start;
+  position:relative;
+  gap:10px;
+}
+
+/*
+  Images were sourced from Unsplash and are free to use without any
+  need for crediting. Background image for each eventbox will change based
+  on what class they are (class="eventbox sportbackground" vs "eventbox partybackground").
+*/
+.eventbox {
+  background-image: url("../images/concertbackground.jpg");
+  background-size: 100% 100px;
+  background-repeat:no-repeat;
+  background-position:top;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 2px rgb(173, 172, 172);
+  padding:120px 20px 20px;
+  box-sizing:border-box;
+  width:375px;
+  display:grid;
+  grid-template-columns:auto;
+  gap:5px;
+}
+
+.eventbox a {
+  align-self:flex-end;
+}
+
+.sportbackground {
+  background-image: url("../images/sportbackground.jpg");
+}
+
+.conferencebackground {
+  background-image: url("../images/conferencebackground.jpg");
+}
+
+.partybackground {
+  background-image: url("../images/partybackground.jpg");
+}
+
+.eventboxlink {
+  display:block;
+  background-color:rgb(0, 102, 255);
+  color:white;
+  padding:0.3em 0.5em;
+  border-radius:5px;
+  border:none;
+  font-size:1em;
+  text-decoration-line:none;
+  text-align:center;
+}
+
+.eventboxlink:hover {
+  background-color:rgb(34, 135, 249);
+}
+
+.eventboxlink:active {
+  background-color:rgb(0, 62, 155);
+}
+
+/* Style for section that displays events using grid layout in yourevents.php */
+.grideventslide {
+  padding: 40px;
+}
+
+.grideventslide h2 {
+  margin-bottom:20px;
+}
+
+.grideventcontainer {
+  position:relative;
+  display:grid;
+  grid-template-columns: repeat(3, 375px);
+  justify-content:center;
+  gap: 40px;
+}
+
+/* Style for centered headers in multiple pages */
+.middleheader {
+  margin:0.7em 1em;
+  text-align:center;
+}
+
+/* Style for "Create Event" link in yourevents.php */
+#createnewevent {
+  display:block;
+  margin:1em auto;
+  width:40%;
+  background-color:rgb(0, 102, 255);
+  color:white;
+  text-decoration-line:none;
+  text-align:center;
+  border-radius:50px;
+  padding:10px;
+}
+
+#createnewevent:hover {
+  background-color:rgb(34, 135, 249);
+}
+
+#createnewevent:active {
+  background-color:rgb(0, 62, 155);
+}
+
+/* Style for error messages printed in forms */
+.errormessage {
+  color:red;
+  font-weight:bold;
+  margin: 0px 0px 20px;
+}
+
+h1 {
+  text-align:center;
+  margin-bottom:0.5em;
+}
+
+/* Style for background images of login and create/modify event forms */
+.eventbackground1 {
+  background-image: url("../images/eventbackground1.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  padding:24px;
+}
+
+.eventbackground2 {
+  background-image: url("../images/confetti2.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  padding:24px;
+}
+
+/* Style for all forms and their fields */
+.formcontainer {
+  width:70%;
+  margin:0px auto;
+  position:relative;
+  background-color:white;
+  padding:48px;
+  border-radius:20px;
+  box-shadow: 0px 0px 10px 2px rgb(59, 59, 59);
+}
+
+fieldset {
+  position:relative;
+  width:100%;
+  padding:1em;
+  margin-bottom:20px;
+  border:4px solid black;
+  border-radius:5px;
+  box-sizing:border-box;
+}
+
+legend {
+  font-size:1.5em;
+}
+
+label {
+  display:block;
+}
+
+input, select {
+  padding:5px;
+  font-size:1em;
+  margin: 10px 0px 20px;
+  border-radius:5px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+button {
+  background-color:rgb(0, 102, 255);
+  color:white;
+  padding:0.3em 0.5em;
+  border-radius:5px;
+  border:none;
+  font-size:1em;
+  cursor:pointer;
+  width:100%;
+}
+
+button:hover {
+  border:none;
+  background-color:rgb(34, 135, 249);
+}
+
+button:active {
+  background-color:rgb(0, 62, 155);
+}
+
+textarea {
+  width:100%;
+  font-size:1em;
+  height:4em;
+  padding:10px;
+  box-sizing: border-box;
+}
+
+hr {
+  margin:20px 0px;
+}
+
+/* Style for "Create An Account" link in login.php */
+.createlink {
+  display:block;
+  width:fit-content;
+  margin:0px auto;
+  text-decoration-line:none;
+  color:rgb(0, 102, 255);
+}
+
+.createlink:visited {
+  color:rgb(0, 102, 255);
+}
+
+/* Style for box containing searchbar and filters/sort options */
+.searchbox {
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  border-radius:20px;
+  box-shadow: 0px 0px 10px 2px rgb(173, 172, 172);
+  background-color:white;
+  gap: 10px;
+  padding:20px;
+}
+
+.searchbox .bigsearchitem {
+  padding:0px;
+  margin:0px;
+  position:relative;
+}
+
+.smallsearchitem {
+  position:relative;
+}
+
+.searchbox a {
+  display:block;
+  text-align:center;
+  margin-top:5px;
+}
+
+.searchbox button+button {
+  margin-top:5px;
+}
+
+/* Style to make "back" buttons only the width of their text */
+.backbutton {
+  width:fit-content;
+}
+
+/* Style to create drop down menu to logout user */
+.logoutmenu {
+  position: relative;
+  display: block;
+}
+
+/* Display logout link when user hovers over their name (logout button) */
+.logoutmenu:hover .logoutlink{
+  display:block;
+  padding:5px;
+  box-sizing:border-box;
+  border:1px solid black;
+  border-radius: 5px;
+  background-color:white;
+  width:100%;
+}
+
+.logoutbutton {
+  width:fit-content;
+  background-color:#1fcf57;
+  color:white;
+}
+
+.logoutbutton:hover {
+  background-color:#1da548;
+}
+
+/* Set logout option to be invisible by default */
+.logoutlink {
+  display: none;
+  position: absolute;
+  z-index:1;
+}
+
+.logoutmenu:hover .logoutlink:hover {
+  background-color:rgb(227, 227, 227);
+}
+
+/* Style for panels used in displayevent.php, showaccount.php, and about.php */
+.displayeventbox, .displayaccountbox, .aboutusbox {
+  margin:40px auto;
+  box-sizing:border-box;
+  width:80%;
+  padding: 40px;
+  border-radius:20px;
+  box-shadow: 0px 0px 10px 2px rgb(173, 172, 172);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+table, th, td{
+  border:2px solid black;
+}
+
+.founderbox{
+  display:flex;
+  justify-content:space-around;
+  gap:10px;
+}
+
+.founderbox img {
+  height:300px;
+  width:300px;
+}
+
+@media screen and (max-width: 1230px) {
+  .grideventcontainer {
+    grid-template-columns: repeat(2, 375px);
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .eventslide {
+    flex-direction:column-reverse;
+  }
+
+  .eventcontainer {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:stretch;
+    align-content:flex-start;
+    position:relative;
+    gap:10px;
+  }
+  
+  .bigsearchitem {
+    width:100%;
+  }
+
+  .searchbox {
+    position:relative;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:flex-end;
+  }
+
+  .smallsearchitem {
+    width:250px;
+  }
+
+  .founderbox{
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    height:fit-content;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    align-content:center;
+  }
+
+  nav {
+    display:block;
+    position:relative;
+    width:100%;
+    box-sizing:border-box;
+  }
+  
+  nav ul {
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    align-items:center;
+    gap: 20px;
+  }
+  
+  nav li {
+    display:block;
+    position:relative;
+    width:100%;
+  }
+
+  nav a {
+    display:block;
+    font-size:1em;
+    text-decoration-line:none;
+    color:inherit;
+    padding:5px;
+    border-radius:0px;
+    border:1px solid black;
+    text-align:center;
+    background-color:rgb(224, 224, 224);
+  }
+
+  nav .smallbutton {
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  nav .logoutbutton {
+    width:100%;
+  }
+
+  .grideventcontainer {
+    grid-template-columns: 375px;
+  }
+
+  #createnewevent {
+    width:80%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .smallsearchitem {
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  input, select {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .smallbutton + #deletebutton {
+    margin-left:0px;
+    margin-top: 10px;
+  }
+
+  .founderbox img {
+    height:auto;
+    width:100%;
+  }
+}
