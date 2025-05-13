@@ -7,7 +7,7 @@
 -->
 
 <?php
-  require_once "../private/functions/connection.php";
+  require_once "../../private/functions/connection.php";
   $database = db_connect();
 
   //Assign values from searchbar/filters using GET method.
