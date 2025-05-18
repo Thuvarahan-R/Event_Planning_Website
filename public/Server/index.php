@@ -7,7 +7,7 @@
 -->
 
 <?php
-  require_once "../../private/functions/connection.php";
+  require_once "../private/functions/connection.php";
   $database = db_connect();
 
   //Assign values from searchbar/filters using GET method.
@@ -41,13 +41,13 @@
   <meta name="author" content="Simon Tan">
   <meta name="keywords" content="Eventsite, event, planning">
   <meta name="description" content="Landing page for Eventsite that allows users to log in">
-  <link rel="stylesheet" href="../css/general.css" type="text/css">
+  <link rel="stylesheet" href="../public/css/general.css" type="text/css">
   <title>Welcome to Eventsite</title>
 </head>
 
 <body>
   <?php
-    include "../../private/functions/header.php";
+    include "../private/functions/header.php";
   ?>
   <main>
     <section class="banner">
@@ -167,7 +167,7 @@
   </main>
 
   <?php
-  include "../../private/functions/footer.php"
+  include "../private/functions/footer.php"
   ?>
   <?php
   //populate search fields with previous results
